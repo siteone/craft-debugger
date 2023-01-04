@@ -1,0 +1,38 @@
+{
+    "name": "siteone/craft-tracy",
+    "description": "Tracy plugin for Craft CMS 4",
+    "type": "craft-plugin",
+    "keywords": [
+        "craft", "craftcms", "craft-plugin", "tracy", "debug", "debugger", "profiler", "siteone"
+    ],
+    "support": {
+        "docs": "https://github.com/siteone/craft-tracy/blob/master/README.md",
+        "issues": "https://github.com/siteone/craft-tracy/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SiteOne, s.r.o.",
+            "homepage": "https://www.github.com/siteone"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "craftcms/cms": "^4.0.0",
+        "tracy/tracy": "2.9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "SiteOne\\Craft\\Plugins\\Tracy\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Tracy",
+        "handle": "tracy",
+        "developer": "SiteOne",
+        "developerUrl": "https://www.siteone.cz/",
+        "documentationUrl": "https://github.com/siteone/craft-tracy/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/siteone/craft-tracy/master/CHANGELOG.md",
+        "class": "SiteOne\\Craft\\Plugins\\Tracy\\Tracy"
+    }
+}
