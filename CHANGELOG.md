@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 - 2023-02-08
+
+### Changed
+- Updated Tracy to `v2.9.6`.
+
 ## 1.1.0 - 2023-01-11
 
 ### Changed
