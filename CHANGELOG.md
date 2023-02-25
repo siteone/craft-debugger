@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0 - 2023-02-25
+
+### Added
+- User panel
+
 ## 1.2.0 - 2023-02-08
 
 ### Changed
