@@ -1,0 +1,61 @@
+<?php
+use Tracy\Dumper;
+
+$yesNo = [
+	true => '<span style="color: green">yes</span>',
+	false => '<span style="color: red">no</span>',
+];
+?>
+<div class="nette-UserPanel">
+	<h1><?php if (!$user->isGuest): ?>Logged in<?php else: ?>Unlogged<?php endif ?></h1>
+	<?php if ($user->getIdentity()): ?>
+		<table>
+			<tbody>
+			<tr>
+				<td colspan="2">
+					<img src="<?php echo $identity->getThumbUrl(60) ?>" width="24" height="24" style="border-radius: 12px; display: inline; margin-top: -7px;">
+					<strong style="font-size: 16px"><?php echo $identity->username ?></strong>
+				</td>
+			</tr>
+			<tr>
+				<td><strong>ID</strong></td>
+				<td><?php echo $identity->id ?></td>
+			</tr>
+			<tr>
+				<td><strong>Is Active?</strong></td>
+				<td><?php echo $yesNo[$identity->active] ?></td>
+			</tr>
+			<tr>
+				<td><strong>Is Pending?</strong></td>
+				<td><?php echo $yesNo[$identity->pending] ?></td>
+			</tr>
+			<tr>
+				<td><strong>Is Locked?</strong></td>
+				<td><?php echo $yesNo[$identity->locked] ?></td>
+			</tr>
+			<tr>
+				<td><strong>Is Suspended?</strong></td>
+				<td><?php echo $yesNo[$identity->suspended] ?></td>
+			</tr>
+			<tr>
+				<td><strong>Is Admin?</strong></td>
+				<td><?php echo $yesNo[$identity->admin] ?></td>
+			</tr>
+			<tr>
+				<td><strong>Full Name</strong></td>
+				<td><?php echo $identity->fullName ?></td>
+			</tr>
+			<tr>
+				<td><strong>E-mail</strong></td>
+				<td><a href="mailto:<?php echo $identity->email ?>"><?php echo $identity->email ?></a></td>
+			</tr>
+			<tr>
+				<td><strong>Created At</strong></td>
+				<td><?php echo $identity->dateCreated->format('Y-m-d \@ H:i:s') ?></td>
+			</tr>
+			</tbody>
+		</table>
+	<?php else: ?>
+		<p>no identity</p>
+	<?php endif ?>
+</div>

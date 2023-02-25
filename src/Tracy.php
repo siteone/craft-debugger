@@ -10,6 +10,7 @@ namespace SiteOne\Craft\Plugins\Tracy;
 
 use Craft;
 use craft\base\Plugin;
+use SiteOne\Craft\Plugins\Tracy\Bar\UserPanel;
 
 /**
  * @author  SiteOne, s.r.o.
@@ -43,6 +44,8 @@ class Tracy extends Plugin
 		\Tracy\Debugger::$keysToHide = $this->getSettings()->keysToHide;
 		\Tracy\Debugger::$dumpTheme = $this->getSettings()->dumpTheme;
 		\Tracy\Debugger::$showLocation = $this->getSettings()->showLocation;
+
+		\Tracy\Debugger::getBar()->addPanel(new UserPanel(Craft::$app->getUser()));
 		\Tracy\Debugger::enable($isDebug ? \Tracy\Debugger::DEVELOPMENT : \Tracy\Debugger::PRODUCTION);
 
 		Craft::info(
