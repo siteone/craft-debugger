@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.0 - 2023-03-02
+
+### Changed
+- Updated Tracy to `v2.9.7`.
+
 ## 1.3.0 - 2023-02-25
 
 ### Added
